@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @teacher %>
+
+<h2>List of Subjects:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Section</th>
+      <th>Number of Students</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teacher.subjects.each do |subject| %>
+      <tr>
+        <td><%= link_to subject.name, subject%></td>
+        <td><%= subject.section%></td>
+        <td><%= subject.number_of_students%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p></p>
+
+<div>
+  <%= link_to "Edit this teacher", edit_teacher_path(@teacher) %> |
+  <%= link_to "Back to teachers", teachers_path %>
+<p></p>
+  <%= button_to "Destroy this teacher", @teacher, method: :delete %>
+</div>
