@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  year_level: 1
+  number_of_units: 1
+  total_assessment: 1.5
+
+two:
+  name: MyString
+  year_level: 1
+  number_of_units: 1
+  total_assessment: 1.5
