@@ -1,0 +1,42 @@
+<%= form_with(model: subject) do |form| %>
+  <% if subject.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+        <% subject.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :section, style: "display: block" %>
+    <%= form.text_field :section %>
+  </div>
+
+  <div>
+    <%= form.label :number_of_units, style: "display: block" %>
+    <%= form.number_field :number_of_units %>
+  </div>
+
+  <div>
+    <%= form.label :per_unit_rate, style: "display: block" %>
+    <%= form.text_field :per_unit_rate %>
+  </div>
+
+  <div>
+    <%= form.label :teacher_id, style: "display: block" %>
+    <%= collection_select(:subject, :teacher_id, Teacher.all, :id, :name) %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
