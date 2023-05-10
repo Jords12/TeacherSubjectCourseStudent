@@ -66,6 +66,6 @@ class TeachersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def teacher_params
-      params.require(:teacher).permit(:name, :department, :monthly_salary, :per_unit_rate)
+      params.require(:teacher).permit(:name, :department, :monthly_salary, :per_unit_rate, :avatar)
     end
 end
